@@ -23,8 +23,10 @@
      }
 
      #root {
-      height: 100%; /* Основной контейнер должен занимать всю высоту */
-      overflow: auto; /* Включаем скроллинг только внутри контента */
+      height: 100%; 
+      overflow-y: auto; 
+      padding-bottom: env(safe-area-inset-bottom);
+      bottom: env(safe-area-inset-bottom);
     }
     </style>
   </head>
