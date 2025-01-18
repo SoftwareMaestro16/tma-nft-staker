@@ -5,26 +5,29 @@
     border-radius: 10px;
     border: 1px solid white;
     position: fixed;
-    bottom: env(safe-area-inset-bottom, 0);
+    bottom: 0;
     padding: 1px 0;
     z-index: 1000;
+    margin-bottom: 5px;
     background: #23344f;
-    margin-bottom: 3px;
 
     display: flex;
     align-items: center;
-    flex-direction: row;
     justify-content: space-around;
+
+    padding-bottom: env(safe-area-inset-bottom);
+    margin-bottom: 10px;
 
     .item {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin-top: 11px;
-        margin-left: 20px;
-        margin-right: 20px;
+        width: 52px;
         cursor: pointer;
+        margin-top: 11px;
+    
+
 
         img {
             width: 26px;
@@ -32,8 +35,10 @@
         }
 
         h3 {
-            margin-top: 0;
+            margin-top: 4px;
             font-size: 12px;
+            font-family: 'Aeroport Light', sans-serif;
+            color: white;
         }
     }
 }
@@ -43,10 +48,6 @@
         height: 56px;
 
         .item {
-            margin-top: 13px;
-            margin-left: 24px;
-            margin-right: 24px;
-
             img {
                 width: 31px;
                 height: 31px;
@@ -57,4 +58,8 @@
             }
         }
     }
+}
+
+body {
+    padding-bottom: 10px; /* Пространство для фиксации меню */
 }

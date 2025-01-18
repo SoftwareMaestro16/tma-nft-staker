@@ -27,8 +27,8 @@ function InTg() {
                     <h1>NFT Staker</h1>
                     <h2>Stake NFT for Rewards.</h2>
                 </div>
-                
-                    {connectedWallet ? 
+                    {connectedWallet 
+                        ? 
                         <>
                             <Rewards />
                         </>    
