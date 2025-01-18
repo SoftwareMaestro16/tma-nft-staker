@@ -1,3 +1,5 @@
+
+
 .rewardContainer {
     display: flex;
     flex-direction: column;
@@ -10,9 +12,8 @@
     overflow-y: scroll;
     scrollbar-width: thin; 
     scrollbar-color: transparent transparent;
+    
     // margin-bottom: 40px;
-    overflow-y: hidden; 
-    overflow-x: hidden;
 
     &::-webkit-scrollbar {
         width: 0; 
@@ -42,11 +43,11 @@
         display: none; 
     }
     
-    @media (min-width: 422px) {
-        .nftContainer {
-            margin-bottom: 50px;
-        }
-    }
+    // @media (min-width: 422px) {
+    //     .rewardContainer {
+    //         margin-bottom: 0;
+    //     }
+    // }
 
     .noPositions {
         margin-top: 40px;
