@@ -22,15 +22,14 @@
         margin-top: 11px;
         margin-left: 20px;
         margin-right: 20px;
+        cursor: pointer;
 
         img {
             width: 26px;
             height: 26px;
-            cursor: pointer;
         }
 
         h3 {
-            cursor: pointer;
             margin-top: 0;
             font-size: 12px;
         }
@@ -43,12 +42,13 @@
 
 @media (min-width: 422px) {
     .menuContainer {
-        height: 54px;
+        height: 56px;
         margin-bottom: 10px;
 
         .item {
             margin-left: 24px;
             margin-right: 24px;
+            cursor: pointer;
 
             img {
                 width: 31px;

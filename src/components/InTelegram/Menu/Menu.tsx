@@ -6,19 +6,19 @@ function Menu() {
         <>
             <div className={styles.menuContainer}>
                 <div className={styles.item}>
-                    <img src="/warning.png" alt="" />
+                    <img src="/rewards.png" alt="" />
                     <h3>Rewards</h3>
                 </div>
                 <div className={styles.item}>
-                    <img src="/warning.png" alt="" />
+                    <img src="/nft.png" alt="" />
                     <h3>NFT</h3>
                 </div>
                 <div className={styles.item}>
-                    <img src="/warning.png" alt="" />
+                    <img src="/mint.png" alt="" />
                     <h3>Mint</h3>
                 </div>
                 <div className={styles.item}>
-                    <img src="/warning.png" alt="" />
+                    <img src="/profile.png" alt="" />
                     <h3>Profile</h3>
                 </div>
 
