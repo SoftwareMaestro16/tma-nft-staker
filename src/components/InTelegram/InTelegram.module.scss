@@ -29,6 +29,8 @@
     flex-direction: column;
     overflow-y: hidden; 
     overflow-x: hidden;
+    padding-bottom: 0;
+    height: calc(100vh - env(safe-area-inset-bottom));
 
     .desc {
         display: flex;
