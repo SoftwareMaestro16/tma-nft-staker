@@ -2,16 +2,14 @@ import styles from "./InTelegram.module.scss";
 // import { MainButton } from "@twa-dev/sdk/react";
 // import { SecondaryButton } from "@twa-dev/sdk/react";
 import { TonConnectButton, useTonWallet } from "@tonconnect/ui-react";
-import { Address } from "@ton/core";
-import NftList from "./NftList/NftList";
-import { collectionAddress } from "../../utils/extra";
-import Menu from "./Menu/Menu";
+import Rewards from "./Rewards/Rewards";
+import { useWalletAddress } from "../../utils/WalletContext";
 
 function InTg() {
     const wallet = useTonWallet();
-    // const { open } = useTonConnectModal();
+    const { connectedWallet, setConnectedWallet } = useWalletAddress();
 
-    const connectedWallet = wallet ? Address.parse(wallet.account.address) : null;
+    setConnectedWallet(wallet ? wallet.account.address : null);
 
     return (
         <>
@@ -24,29 +22,20 @@ function InTg() {
                     <h1>NFT Staker</h1>
                     <h2>Stake NFT for Rewards.</h2>
                 </div>
-                <div className={styles.nftContainer}>
-                    <div className={styles.nftText}>
-                        <h2>Your NFTs:</h2>
-                    </div>
+                
                     {connectedWallet ? 
                         <>
-                        <NftList 
-                            walletAddress={connectedWallet.toString()} 
-                            collectionAddress={collectionAddress}
-                        />
-                        
-                        <Menu />
-                        </>
-                        
+                            <Rewards />
+                        </>    
                         :
-                         <div className={styles.noWallet}>
-                            <img src="/warning.png" alt="" />
-                            <h2>Wallet Not Connected</h2>
-                            <h3>Connect Wallet to View NFTs.</h3>  
-                        </div> 
-                    }
-
-                </div>
+                        <div className={styles.noContainer}>
+                            <div className={styles.noWallet}>
+                                <img src="/warning.png" alt="" />
+                                <h2>Wallet Not Connected</h2>
+                                <h3>Connect Wallet to View NFT.</h3>  
+                            </div> 
+                        </div>                 
+                    } 
                 <br />
                 
             </div>

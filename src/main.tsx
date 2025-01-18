@@ -1,10 +1,13 @@
 // import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './components/Main/App.tsx'
+import AppRouter from './components/AppRouter'
 import { StrictMode } from 'react'
+import { WalletProvider } from './utils/WalletContext'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <WalletProvider>
+      <AppRouter />
+    </WalletProvider>
   </StrictMode>,
 )
