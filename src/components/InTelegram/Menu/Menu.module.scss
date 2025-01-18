@@ -6,13 +6,18 @@
     border: 1px solid white;
     position: fixed;
     bottom: 0;
+    padding: 1px 0;
+    z-index: 1000;
     margin-bottom: 5px;
     background: #23344f;
 
     display: flex;
     align-items: center;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+
+    margin-bottom: 0; 
+    padding-bottom: env(safe-area-inset-bottom);
 
     .item {
         display: flex;
