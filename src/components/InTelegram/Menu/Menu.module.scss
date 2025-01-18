@@ -1,10 +1,3 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%; /* Полная высота экрана */
-    overflow-x: hidden; /* Убираем горизонтальный скролл */
-}
-
 .menuContainer {
     position: fixed;
     bottom: 0;
@@ -12,7 +5,7 @@ html, body {
     right: 0;
     height: 53px;
     max-width: 500px;
-    margin: 0 auto; /* Центрируем меню на экране */
+    margin: 0 auto;
     background: #23344f;
     border-radius: 10px 10px 0 0;
     border: 1px solid white;
@@ -21,7 +14,7 @@ html, body {
     align-items: center;
     justify-content: space-around;
     box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
-    padding-bottom: env(safe-area-inset-bottom, 0); /* Учитываем безопасную зону */
+    padding-bottom: env(safe-area-inset-bottom, 0); 
 }
 
 .menuContainer {
