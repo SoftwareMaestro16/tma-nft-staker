@@ -1,33 +1,39 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Полная высота экрана */
+    overflow-x: hidden; /* Убираем горизонтальный скролл */
+}
+
 .menuContainer {
-    height: 47px;
-    width: 97vw;
-    max-width: 500px;
-    border-radius: 10px;
-    border: 1px solid white;
     position: fixed;
     bottom: 0;
-    padding: 1px 0;
-    z-index: 1000;
-    margin-bottom: 5px;
+    left: 0;
+    right: 0;
+    height: 53px;
+    max-width: 500px;
+    margin: 0 auto; /* Центрируем меню на экране */
     background: #23344f;
-
+    border-radius: 10px 10px 0 0;
+    border: 1px solid white;
+    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
+    padding-bottom: env(safe-area-inset-bottom, 0); /* Учитываем безопасную зону */
+}
 
-    padding-bottom: env(safe-area-inset-bottom);
-    margin-bottom: 10px;
+.menuContainer {
 
     .item {
+        margin-top: 7px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         width: 52px;
         cursor: pointer;
-        margin-top: 11px;
-    
-
 
         img {
             width: 26px;
@@ -40,6 +46,7 @@
             font-family: 'Aeroport Light', sans-serif;
             color: white;
         }
+
     }
 }
 
@@ -48,6 +55,7 @@
         height: 56px;
 
         .item {
+            margin-top: 12px;
             img {
                 width: 31px;
                 height: 31px;
@@ -61,5 +69,5 @@
 }
 
 body {
-    padding-bottom: 10px; /* Пространство для фиксации меню */
+    padding-bottom: 60px; /* Убедимся, что меню не перекрывает содержимое */
 }
