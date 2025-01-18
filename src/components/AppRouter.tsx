@@ -11,7 +11,10 @@ function AppRouter() {
         <Router>
             <Routes>
                 <Route path="/" element={<App />} /> 
-                <Route path="/nft" element={<NftList walletAddress={connectedWallet || ''} collectionAddress={collectionAddress} />} /> 
+                <Route
+                    path="/nft/:address"
+                    element={<NftList walletAddress={connectedWallet || ''} collectionAddress={collectionAddress} />}
+                />           
             </Routes>
         </Router>
     );
