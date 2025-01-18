@@ -1,0 +1,109 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+    h2 {
+        margin-left: 15px;
+        font-size: 26px;
+    }
+}
+
+.tgContainer {
+    padding: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: hidden; 
+    overflow-x: hidden;
+
+
+    .desc {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        margin-bottom: 40px; 
+
+        h1, h2 {
+            margin: 0; 
+        }
+
+    }
+
+    
+    .nftContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #23344f;
+        border: 1px solid white;
+        border-radius: 12px;
+        width: 97vw;
+        max-width: 500px;
+        overflow-y: scroll;
+        scrollbar-width: thin; 
+        scrollbar-color: transparent transparent;
+
+        &::-webkit-scrollbar {
+            width: 0; 
+            background: transparent; 
+            display: none;
+        }
+
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        
+        .nftText {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid #ffffff;
+            
+            max-width: 500px;
+            height: 50px;
+
+            h2 {
+                font-size: 24px;
+            }
+            
+        }
+        
+        .noWallet {
+            margin-top: 40px;
+            margin-bottom: 50px;
+
+            img {
+                width: 40px;
+
+            }
+
+            h2 {
+                margin-top: 0;
+                font-size: 20px;
+                margin-bottom: 0;
+                color: #477ebe;
+            }
+    
+            h3 {
+                margin-top: 5px;
+                font-size: 18px;
+                font-weight: 400;
+            }
+
+        }
+
+    }
+
+    .nftContainer::-webkit-scrollbar {
+        display: none; 
+    }
+    
+}
+
+.tcBtn {
+    padding: 7px;
+    margin-left: auto;
+    position: relative;
+}
