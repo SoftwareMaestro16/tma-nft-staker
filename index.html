@@ -20,10 +20,25 @@
       /* overflow-y: hidden; */
       overscroll-behavior: none;
      }
+
+     #root {
+      height: 100%; /* Основной контейнер должен занимать всю высоту */
+      overflow: auto; /* Включаем скроллинг только внутри контента */
+    }
     </style>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/src/main.tsx">
+      document.addEventListener('touchmove', function (e) {
+          const root = document.getElementById('root');
+          if (root.scrollTop === 0 && e.touches[0].clientY > 0) {
+              e.preventDefault(); // Блокирует скролл вверх
+          }
+          if (root.scrollHeight - root.scrollTop <= root.clientHeight && e.touches[0].clientY < 0) {
+              e.preventDefault(); // Блокирует скролл вниз
+          }
+      }, { passive: false });
+    </script>
   </body>
 </html>
