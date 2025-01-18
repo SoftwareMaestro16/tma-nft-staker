@@ -55,7 +55,7 @@ function NftList({ walletAddress, collectionAddress }: NftListProps) {
                             <img src="/nft.png" alt="" />
                             <h1>Mint NFT</h1>
                             <h2>
-                                You don't have NFT of this
+                                You don't have NFT of this{" "}
                                 <a href="https://t.me/NFTStakerBot/Stake">Collection</a>.
                             </h2>
                         </div>

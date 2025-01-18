@@ -1,12 +1,15 @@
 import styles from "./Rewards.module.scss";
 import Menu from "../Menu/Menu";
 import { useNavigate } from "react-router-dom";
+import { useWalletAddress } from "../../../utils/WalletContext"; 
 
 function Rewards() {
-    const navigate = useNavigate(); 
+    const navigate = useNavigate();
+    const { connectedWallet } = useWalletAddress(); 
 
     const handleNavigation = (path: string) => {
-        navigate(path);
+        const fullPath = path === '/nft' && connectedWallet ? `/nft/${connectedWallet}` : path;
+        navigate(fullPath);
     };
 
     return (
