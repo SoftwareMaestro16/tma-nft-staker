@@ -1,0 +1,41 @@
+.menuContainer {
+    height: 47px;
+    width: 97vw;
+    max-width: 500px;
+    border-radius: 10px;
+    border: 1px solid white;
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 10px;
+    background: #23344f;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 11px;
+        margin-left: 20px;
+        margin-right: 20px;
+
+        img {
+            width: 26px;
+            height: 26px;
+            cursor: pointer;
+        }
+
+        h3 {
+            cursor: pointer;
+            margin-top: 0;
+            font-size: 12px;
+        }
+    
+
+    }
+
+}

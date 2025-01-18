@@ -8,6 +8,17 @@
         margin-left: 15px;
         font-size: 26px;
     }
+
+    @media (min-width: 900px) {
+        .tcBtn {
+            margin-right: 30%;
+        }
+    
+        .testnetText {
+            margin-left: 30%;
+        }
+    
+    }
 }
 
 .tgContainer {
@@ -19,11 +30,10 @@
     overflow-y: hidden; 
     overflow-x: hidden;
 
-
     .desc {
         display: flex;
         flex-direction: column;
-        margin-top: 20px;
+        margin-top: 12px;
         margin-bottom: 40px; 
 
         h1, h2 {
@@ -45,6 +55,7 @@
         overflow-y: scroll;
         scrollbar-width: thin; 
         scrollbar-color: transparent transparent;
+        margin-bottom: 40px;
 
         &::-webkit-scrollbar {
             width: 0; 

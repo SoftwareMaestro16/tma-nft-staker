@@ -93,5 +93,28 @@
             
         }
     }
+
+    @media (min-width: 800px) {
+        .nftItem {
+            padding: 7px;
+
+            img {
+                width: 140px;
+                height: 140px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            button {
+                height: 31px;
+                font-size: 20px;
+            }
+
+        }
+
+
+    }
 }
 

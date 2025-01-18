@@ -5,6 +5,7 @@ import { TonConnectButton, useTonWallet } from "@tonconnect/ui-react";
 import { Address } from "@ton/core";
 import NftList from "./NftList/NftList";
 import { collectionAddress } from "../../utils/extra";
+import Menu from "./Menu/Menu";
 
 function InTg() {
     const wallet = useTonWallet();
@@ -15,7 +16,7 @@ function InTg() {
     return (
         <>
             <div className={styles.header}>
-                <h2>Testnet</h2>
+                <h2 className={styles.testnetText}>Testnet</h2>
                 <TonConnectButton className={styles.tcBtn}/>
             </div>
             <div className={styles.tgContainer}>
@@ -28,10 +29,15 @@ function InTg() {
                         <h2>Your NFTs:</h2>
                     </div>
                     {connectedWallet ? 
+                        <>
                         <NftList 
                             walletAddress={connectedWallet.toString()} 
                             collectionAddress={collectionAddress}
                         />
+                        
+                        <Menu />
+                        </>
+                        
                         :
                          <div className={styles.noWallet}>
                             <img src="/warning.png" alt="" />
@@ -42,7 +48,6 @@ function InTg() {
 
                 </div>
                 <br />
-                
                 
             </div>
         </>
