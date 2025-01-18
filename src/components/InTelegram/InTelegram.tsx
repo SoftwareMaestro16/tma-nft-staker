@@ -4,12 +4,17 @@ import styles from "./InTelegram.module.scss";
 import { TonConnectButton, useTonWallet } from "@tonconnect/ui-react";
 import Rewards from "./Rewards/Rewards";
 import { useWalletAddress } from "../../utils/WalletContext";
+import { useEffect } from "react";
 
 function InTg() {
     const wallet = useTonWallet();
     const { connectedWallet, setConnectedWallet } = useWalletAddress();
 
-    setConnectedWallet(wallet ? wallet.account.address : null);
+    useEffect(() => {
+        if (wallet && wallet.account.address !== connectedWallet) {
+            setConnectedWallet(wallet.account.address);
+        }
+    }, [wallet, connectedWallet, setConnectedWallet]); 
 
     return (
         <>
