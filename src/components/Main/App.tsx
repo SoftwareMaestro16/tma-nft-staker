@@ -22,6 +22,7 @@ function App() {
       WebApp.enableClosingConfirmation();
       WebApp.expand();
       WebApp.setHeaderColor('#23344f'); 
+      WebApp.requestFullscreen();
 
       setIsTelegram(true);
 
