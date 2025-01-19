@@ -18,32 +18,22 @@
       overflow-x: hidden;
       /* overflow-y: hidden; */
       overscroll-behavior: none;
-      padding-bottom: env(safe-area-inset-bottom);
-      
-     }
+      padding-bottom: 0;
+      bottom: 0;
+    }
 
      #root {
       height: 100%; 
       overflow-y: auto; 
-      padding-bottom: env(safe-area-inset-bottom);
-      bottom: env(safe-area-inset-bottom);
+      padding-bottom: 0;
+      bottom: 0;
     }
     </style>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx">
-      document.addEventListener('touchmove', function (event) {
-        const root = document.getElementById('root');
-        const maxScroll = root.scrollHeight - root.clientHeight;
-
-        if (
-            (root.scrollTop === 0 && event.touches[0].clientY > 0) ||
-            (root.scrollTop >= maxScroll && event.touches[0].clientY < 0)
-        ) {
-            event.preventDefault();
-        }
-    }, { passive: false });
+      
     </script>
   </body>
 </html>

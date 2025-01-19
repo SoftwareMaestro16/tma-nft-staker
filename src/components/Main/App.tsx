@@ -11,14 +11,12 @@ declare global {
   }
 }
 
-
-
 function App() {
   const [isTelegram, setIsTelegram] = useState<boolean>(false);
 
   useEffect(() => {
     const isTgCheck = typeof window !== 'undefined' && window.Telegram?.WebApp?.initData;
-  
+
     if (isTgCheck) {
       WebApp.ready();
       WebApp.enableClosingConfirmation();
@@ -26,23 +24,8 @@ function App() {
       WebApp.setHeaderColor('#23344f'); 
       
       setIsTelegram(true);
-  
+
       document.body.style.backgroundColor = '#152236';
-  
-      // Установка отступа снизу
-      const updateSafeArea = () => {
-        const { bottom } = WebApp.safeAreaInset || { bottom: 0 };
-        document.body.style.paddingBottom = `${bottom}px`; // Убрать отрицательное значение
-      };
-  
-      // Первоначальная установка
-      updateSafeArea();
-  
-      // Обновление при изменении SafeArea
-      WebApp.onEvent('safeAreaChanged', updateSafeArea);
-  
-      // Очистка обработчика при размонтировании
-      return () => WebApp.offEvent('safeAreaChanged', updateSafeArea);
     }
   }, []);
 
