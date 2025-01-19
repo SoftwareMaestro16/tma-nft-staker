@@ -49,7 +49,7 @@ function App() {
           }
         },}}
       >
-        {isTelegram ? <InTg /> : <NotInTg />}
+        {!isTelegram ? <InTg /> : <NotInTg />}
       </TonConnectUIProvider>
     </div>
   );
