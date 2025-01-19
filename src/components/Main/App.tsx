@@ -4,11 +4,16 @@ import { TonConnectUIProvider, THEME } from '@tonconnect/ui-react';
 import WebApp from '@twa-dev/sdk';
 import InTg from '../InTelegram/InTelegram';
 import NotInTg from '../NotInTelegram/NotInTg';
+import { viewport } from '@telegram-apps/sdk';
 
 declare global {
   interface Window {
     Telegram?: any;
   }
+}
+
+if (viewport.mount.isAvailable()) {
+  viewport.mount();
 }
 
 function App() {
