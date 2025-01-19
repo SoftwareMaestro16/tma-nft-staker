@@ -22,11 +22,18 @@ function App() {
       WebApp.enableClosingConfirmation();
       WebApp.expand();
       WebApp.setHeaderColor('#23344f'); 
-      WebApp.requestFullscreen();
-
+      
       setIsTelegram(true);
 
       document.body.style.backgroundColor = '#152236';
+
+      const { bottom } = WebApp.safeAreaInset || { bottom: 0 };
+      document.body.style.paddingBottom = `${-bottom}px`; 
+
+      WebApp.onEvent('safeAreaChanged', () => {
+        const { bottom } = WebApp.safeAreaInset || { bottom: 0 };
+        document.body.style.paddingBottom = `${-bottom}px`;
+      });
     }
   }, []);
 
@@ -50,13 +57,7 @@ function App() {
           }
         },}}
       >
-        {isTelegram ? (
-          <>
-            <InTg />
-          </>
-        ) : (
-          <NotInTg />
-        )}
+        {isTelegram ? <InTg /> : <NotInTg />}
       </TonConnectUIProvider>
     </div>
   );
