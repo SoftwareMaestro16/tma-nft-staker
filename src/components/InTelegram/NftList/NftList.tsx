@@ -3,7 +3,7 @@ import getNftByAddress from "../../../utils/getNftByAddress";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { toUserFriendlyAddress } from "@tonconnect/ui-react";
-import Menu from "../Menu/Menu";
+// import Menu from "../Menu/Menu";
 
 export type NftListProps = {
     walletAddress: string;

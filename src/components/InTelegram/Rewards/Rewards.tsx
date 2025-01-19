@@ -1,5 +1,5 @@
 import styles from "./Rewards.module.scss";
-import Menu from "../Menu/Menu";
+// import Menu from "../Menu/Menu";
 import { useNavigate } from "react-router-dom";
 import { useWalletAddress } from "../../../utils/WalletContext"; 
 
