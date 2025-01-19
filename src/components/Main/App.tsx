@@ -4,7 +4,6 @@ import { TonConnectUIProvider, THEME } from '@tonconnect/ui-react';
 import WebApp from '@twa-dev/sdk';
 import InTg from '../InTelegram/InTelegram';
 import NotInTg from '../NotInTelegram/NotInTg';
-import { viewport } from '@telegram-apps/sdk';
 
 declare global {
   interface Window {
@@ -12,16 +11,14 @@ declare global {
   }
 }
 
-if (viewport.mount.isAvailable()) {
-  viewport.mount();
-}
+
 
 function App() {
   const [isTelegram, setIsTelegram] = useState<boolean>(false);
 
   useEffect(() => {
     const isTgCheck = typeof window !== 'undefined' && window.Telegram?.WebApp?.initData;
-
+  
     if (isTgCheck) {
       WebApp.ready();
       WebApp.enableClosingConfirmation();
@@ -29,16 +26,23 @@ function App() {
       WebApp.setHeaderColor('#23344f'); 
       
       setIsTelegram(true);
-
+  
       document.body.style.backgroundColor = '#152236';
-
-      const { bottom } = WebApp.safeAreaInset || { bottom: 0 };
-      document.body.style.paddingBottom = `${-bottom}px`; 
-
-      WebApp.onEvent('safeAreaChanged', () => {
+  
+      // Установка отступа снизу
+      const updateSafeArea = () => {
         const { bottom } = WebApp.safeAreaInset || { bottom: 0 };
-        document.body.style.paddingBottom = `${-bottom}px`;
-      });
+        document.body.style.paddingBottom = `${bottom}px`; // Убрать отрицательное значение
+      };
+  
+      // Первоначальная установка
+      updateSafeArea();
+  
+      // Обновление при изменении SafeArea
+      WebApp.onEvent('safeAreaChanged', updateSafeArea);
+  
+      // Очистка обработчика при размонтировании
+      return () => WebApp.offEvent('safeAreaChanged', updateSafeArea);
     }
   }, []);
 
