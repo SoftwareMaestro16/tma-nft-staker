@@ -62,7 +62,7 @@ function NftList({ walletAddress, collectionAddress }: NftListProps) {
                     )}
                 </div>
             </div>
-            <Menu />
+            {/* <Menu /> */}
         </div>
     );
 }

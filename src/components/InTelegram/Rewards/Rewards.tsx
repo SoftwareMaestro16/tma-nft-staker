@@ -26,7 +26,7 @@ function Rewards() {
                     </div>
                 </div>
             </div>
-            <Menu />
+            {/* <Menu /> */}
         </>
     );
 }
